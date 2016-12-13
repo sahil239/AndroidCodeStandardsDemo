@@ -7,6 +7,7 @@ import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
+import android.util.ArrayMap;
 import android.util.Log;
 import android.view.View;
 import android.widget.SearchView;
@@ -27,7 +28,9 @@ import org.json.JSONObject;
 
 import java.io.File;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import okhttp3.MediaType;
 import okhttp3.MultipartBody;
@@ -162,7 +165,13 @@ public class RetroFitExample extends AppCompatActivity implements SearchView.OnQ
             if(getIntent().getExtras().getInt(ACTIVITY_KEY) == SINGLE_PARAM){
                 callback = restInterface.fetchBreed1("FetchBreed");
             }else{
-                petDetailsCall = restInterface.fetchPetProfile("PetProfile","101","normal");
+
+                Map<String,String> stringStringMap = new HashMap<>();
+                stringStringMap.put("type","PetProfile");
+                stringStringMap.put("petID","101");
+                stringStringMap.put("petType","normal");
+
+                petDetailsCall = restInterface.fetchPetProfileSingleField(stringStringMap);
             }
 
 

@@ -14,6 +14,7 @@ import okhttp3.RequestBody;
 import okhttp3.ResponseBody;
 import retrofit2.Call;
 import retrofit2.http.Field;
+import retrofit2.http.FieldMap;
 import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.GET;
 import retrofit2.http.Multipart;
@@ -36,6 +37,11 @@ public interface ApiInterface {
     @FormUrlEncoded
     @POST(Constants.FILE_PATH)
     Call<PetDetails> fetchPetProfile(@Field("type") String type, @Field("petID") String petID, @Field("petType") String petType);
+
+
+    @FormUrlEncoded
+    @POST(Constants.FILE_PATH)
+    Call<PetDetails> fetchPetProfileSingleField(@FieldMap Map<String,String> stringMap);
 
     @FormUrlEncoded
     @POST(Constants.FILE_PATH)
