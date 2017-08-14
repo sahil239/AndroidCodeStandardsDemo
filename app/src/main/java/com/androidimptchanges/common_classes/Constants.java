@@ -21,7 +21,7 @@ public class Constants {
     public static final String TEXT_PLAIN = "text/plain";
     public static final String MULTIPART_FORM_DATA = "multipart/form-data";
 
-    public static final String IMAGE_TO_UPLOAD = "/sdcard/multi_part/test_image.jpg";
+    public static final String IMAGE_TO_UPLOAD = "/sdcard/wallpaper.jpg";
 
     public static final String ACTIVITY_KEY = "activity_key";
     public static final int SINGLE_PARAM = 0;

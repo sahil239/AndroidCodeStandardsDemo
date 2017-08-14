@@ -87,5 +87,4 @@ public interface ApiInterface {
             , @Part("description") RequestBody description,
             @Part MultipartBody.Part[] file);
 
-
 }

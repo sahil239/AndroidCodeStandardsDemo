@@ -84,11 +84,6 @@ public class GSONDEMO extends AppCompatActivity {
             });
 
 
-            for(int i = 0; i <tags.size();i++){
-
-                Log.d("tags>>", tags.get(i).tags+" >> "+ tags.get(i).count);
-            }
-
 
         }catch (Exception e){
 

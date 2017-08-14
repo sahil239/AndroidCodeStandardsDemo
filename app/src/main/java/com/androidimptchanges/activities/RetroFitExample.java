@@ -263,15 +263,17 @@ public class RetroFitExample extends AppCompatActivity implements SearchView.OnQ
         @Override
         protected Object doInBackground(Object[] params) {
 
-            ArrayList<String> fileList = new ArrayList<>();
-            fileList.add("/sdcard/multi_part/test_image.jpg");
-            fileList.add("/sdcard/multi_part/temp_photo.jpg");
-            fileList.add("/sdcard/multi_part/1475222033808.jpg");
-            fileList.add("/sdcard/multi_part/1468047205525.jpg");
+
 
             if(getIntent().getExtras().getInt(Constants.ACTIVITY_KEY) == Constants.MULTI_PART_SINGLE_IMAGE){
                 callback = uploadFileMultiPart();
             }else {
+
+                ArrayList<String> fileList = new ArrayList<>();
+                fileList.add("/sdcard/multi_part/test_image.jpg");
+                fileList.add("/sdcard/multi_part/temp_photo.jpg");
+                fileList.add("/sdcard/multi_part/1475222033808.jpg");
+                fileList.add("/sdcard/multi_part/1468047205525.jpg");
                 callback = uploadMultipleFileMultiPart(fileList);
             }
 
@@ -422,7 +424,4 @@ public class RetroFitExample extends AppCompatActivity implements SearchView.OnQ
 
         return MultipartBody.Part.createFormData(partName, file.getName(), requestFile);
     }
-
-
-
 }
